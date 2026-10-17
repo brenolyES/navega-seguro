@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz Mito ou Verdade? | Navega Seguro</title>
+<meta name="description" content="Teste seus conhecimentos sobre golpes digitais com 10 perguntas.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 4 8 13v17c0 15 10 26 24 30 14-4 24-15 24-30V13z' fill='%230a3a7a'/%3E%3Cpath d='m21 32 8 8 15-16' stroke='%23fff' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/main.js"></script>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo">
+  <div class="contem">
+    <div class="topo-linha">
+      <a class="marca" href="index.html"><strong>Navega Seguro</strong><span>Guia contra golpes digitais</span></a>
+      <div class="ferramentas" role="group" aria-label="Ajustes de leitura">
+        <button type="button" id="letra-menor">A− Letra menor</button>
+        <button type="button" id="letra-maior">A+ Letra maior</button>
+        <button type="button" id="contraste" aria-pressed="false">Alto contraste</button>
+        <button type="button" id="imprimir">Imprimir</button>
+      </div>
+    </div>
+    <nav class="menu" aria-label="Menu principal"><ul><li><a href="index.html">Início</a></li><li><a href="pessoa-idosa.html">Para você</a></li><li><a href="quem-ensina.html">Para quem ensina</a></li><li><a href="desenvolvedores.html">Para quem desenvolve</a></li><li><a href="quiz.html" aria-current="page">Quiz</a></li><li><a href="ajuda.html">Onde buscar ajuda</a></li><li><a href="como-foi-feito.html">Como o guia foi feito</a></li></ul></nav>
+  </div>
+  <p class="sr" id="aviso-ferramentas" aria-live="polite"></p>
+</header>
+<main id="conteudo" class="contem">
+
+<h1>Quiz "Mito ou Verdade?"</h1>
+<p class="lead">Dez frases sobre golpes digitais. Para cada uma, diga se é mito ou verdade. Depois de responder, aparece a explicação.</p>
+<p>O quiz foi inspirado na dinâmica de cartões "Mitos e Verdades" usada em uma oficina com pessoas idosas (Costa et al., 2025).</p>
+<section class="quiz" id="quiz" aria-label="Quiz">
+<noscript><p>Para fazer o quiz, é preciso ativar o JavaScript no navegador.</p></noscript>
+</section>
+
+</main>
+<footer class="rodape">
+  <div class="contem">
+    <p>Guia elaborado no Trabalho de Conclusão de Curso de Brenoly Porto (Engenharia de Software, Universidade de Pernambuco, Campus Garanhuns, 2026), com orientação do Prof. Ivaldir Honório de Farias Junior.</p>
+    <p>Este guia não substitui o atendimento do seu banco ou da polícia. Em caso de golpe, veja <a href="ajuda.html">Onde buscar ajuda</a>.</p>
+  </div>
+</footer>
+<script>window.QUIZ = [{"afirmacao": "O banco pode ligar pedindo sua senha completa.", "resposta": "Mito", "explicacao": "O banco não pede sua senha por telefone. Desligue e ligue você para o número oficial.", "fonte": "Costa et al. (2025)"}, {"afirmacao": "Mensagens com prêmios fáceis costumam ser golpes.", "resposta": "Verdade", "explicacao": "Promessas de prêmio são uma isca comum.", "fonte": "Costa et al. (2025)"}, {"afirmacao": "Uma mensagem que pede para você agir com urgência pode ser golpe.", "resposta": "Verdade", "explicacao": "Criar pressa é um dos sinais mais comuns de phishing.", "fonte": "Silva, Barboza e Andrade (2025)"}, {"afirmacao": "Se o endereço do remetente é parecido com o do banco, a mensagem é confiável.", "resposta": "Mito", "explicacao": "Golpistas usam endereços parecidos, mas não iguais, aos das empresas.", "fonte": "Silva, Barboza e Andrade (2025)"}, {"afirmacao": "Uma mensagem que começa com \"Prezado cliente\", sem o seu nome, merece atenção.", "resposta": "Verdade", "explicacao": "Saudações genéricas são comuns em mensagens falsas.", "fonte": "Silva, Barboza e Andrade (2025)"}, {"afirmacao": "Erros de português numa mensagem podem indicar golpe.", "resposta": "Verdade", "explicacao": "Erros de gramática e de ortografia são comuns em tentativas de phishing.", "fonte": "Silva, Barboza e Andrade (2025)"}, {"afirmacao": "Se o \"suporte técnico\" pedir para instalar um aplicativo no seu celular, é seguro aceitar.", "resposta": "Mito", "explicacao": "No golpe da \"mão fantasma\", esse aplicativo dá ao criminoso o controle do aparelho.", "fonte": "Maragno e Yamazato (2026)"}, {"afirmacao": "Ativar a verificação em duas etapas deixa suas contas mais protegidas.", "resposta": "Verdade", "explicacao": "É uma camada extra de segurança, além da senha.", "fonte": "Carvalho et al. (2025)"}, {"afirmacao": "Depois de saber que seus dados vazaram, é bom trocar as senhas e acompanhar suas contas.", "resposta": "Verdade", "explicacao": "Agir rápido diminui os danos de um vazamento.", "fonte": "Oliveira e Silva (2025)"}, {"afirmacao": "Antes de fazer uma transferência pedida por mensagem, vale confirmar direto com o banco ou com um familiar de confiança.", "resposta": "Verdade", "explicacao": "Confirmar por outro caminho quebra o golpe.", "fonte": "Costa et al. (2025)"}];</script>
+<script src="assets/js/quiz.js"></script>
+</body>
+</html>

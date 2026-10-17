@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Para quem desenvolve | Navega Seguro</title>
+<meta name="description" content="Orientações para tornar aplicativos e serviços digitais mais seguros e acessíveis para pessoas idosas.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 4 8 13v17c0 15 10 26 24 30 14-4 24-15 24-30V13z' fill='%230a3a7a'/%3E%3Cpath d='m21 32 8 8 15-16' stroke='%23fff' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/main.js"></script>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo">
+  <div class="contem">
+    <div class="topo-linha">
+      <a class="marca" href="index.html"><strong>Navega Seguro</strong><span>Guia contra golpes digitais</span></a>
+      <div class="ferramentas" role="group" aria-label="Ajustes de leitura">
+        <button type="button" id="letra-menor">A− Letra menor</button>
+        <button type="button" id="letra-maior">A+ Letra maior</button>
+        <button type="button" id="contraste" aria-pressed="false">Alto contraste</button>
+        <button type="button" id="imprimir">Imprimir</button>
+      </div>
+    </div>
+    <nav class="menu" aria-label="Menu principal"><ul><li><a href="index.html">Início</a></li><li><a href="pessoa-idosa.html">Para você</a></li><li><a href="quem-ensina.html">Para quem ensina</a></li><li><a href="desenvolvedores.html" aria-current="page">Para quem desenvolve</a></li><li><a href="quiz.html">Quiz</a></li><li><a href="ajuda.html">Onde buscar ajuda</a></li><li><a href="como-foi-feito.html">Como o guia foi feito</a></li></ul></nav>
+  </div>
+  <p class="sr" id="aviso-ferramentas" aria-live="polite"></p>
+</header>
+<main id="conteudo" class="contem">
+
+<h1>Para quem desenvolve</h1>
+<p class="lead">Seis orientações para quem projeta aplicativos e serviços digitais usados por pessoas idosas, com base nos estudos de usabilidade e acessibilidade analisados.</p>
+<div class="aviso"><p><strong>Como ler o respaldo.</strong> Cada ficha mostra quantos estudos sustentam a dica. Isso não quer dizer que a eficácia foi comprovada: nenhum dos estudos mediu se as pessoas passaram a cair menos em golpes.</p><ul class="legenda">
+<li><span class="pontos" aria-hidden="true">●●●</span> <strong>Amplo:</strong> 5 ou mais estudos</li>
+<li><span class="pontos" aria-hidden="true">●●</span> <strong>Moderado:</strong> de 2 a 4 estudos</li>
+<li><span class="pontos" aria-hidden="true">●</span> <strong>Pontual:</strong> 1 estudo</li>
+</ul></div>
+<div class="fichas"><article class="ficha" id="ficha-22"><span class="num">Ficha 22</span><h2>Texto legível e alto contraste</h2><p class="campo"><span class="campo-rotulo">Situação:</span> fontes pequenas e navegação complexa dificultam o uso.</p><p class="campo"><span class="campo-rotulo">O que fazer:</span> fontes sem serifa acima de 18 pontos, alto contraste entre texto e fundo, hierarquia visual clara e opção de letras maiores.</p><div class="respaldo"><span class="campo-rotulo">Respaldo:</span><span class="pontos" aria-hidden="true">●●</span><span class="selo">moderado</span><span>3 estudos</span></div><details><summary>Ver os estudos</summary><ul><li>Diniz e Silva (2024)</li><li>Silva (2026)</li><li>Bonetti e Bica (2024)</li></ul><p class="codigos">Códigos no TCC (Apêndice A): P63, P74, P01</p></details></article><article class="ficha" id="ficha-23"><span class="num">Ficha 23</span><h2>Interfaces simples</h2><p class="campo"><span class="campo-rotulo">O que fazer:</span> listas simples, ícones claros, busca por áudio e ampliação de tela.</p><div class="respaldo"><span class="campo-rotulo">Respaldo:</span><span class="pontos" aria-hidden="true">●</span><span class="selo">pontual</span><span>1 estudo</span></div><details><summary>Ver os estudos</summary><ul><li>Verhalen, Silva e Rodrigues (2025)</li></ul><p class="codigos">Códigos no TCC (Apêndice A): P46</p></details></article><article class="ficha" id="ficha-24"><span class="num">Ficha 24</span><h2>Ofereça um modo de prática sem riscos</h2><p class="campo"><span class="campo-rotulo">Situação:</span> receio de realizar operações irreversíveis.</p><p class="campo"><span class="campo-rotulo">O que fazer:</span> crie um ambiente de simulação em que a pessoa possa treinar operações sem risco financeiro, com ou sem instruções na tela.</p><div class="respaldo"><span class="campo-rotulo">Respaldo:</span><span class="pontos" aria-hidden="true">●●</span><span class="selo">moderado</span><span>2 estudos</span></div><details><summary>Ver os estudos</summary><ul><li>Silva (2026)</li><li>Verhalen, Silva e Rodrigues (2025)</li></ul><p class="codigos">Códigos no TCC (Apêndice A): P71, P41, P42</p></details></article><article class="ficha" id="ficha-25"><span class="num">Ficha 25</span><h2>Confirmações em etapas nas operações financeiras</h2><p class="campo"><span class="campo-rotulo">O que fazer:</span> antes de concluir uma transferência, mostre as confirmações de forma progressiva e clara.</p><div class="respaldo"><span class="campo-rotulo">Respaldo:</span><span class="pontos" aria-hidden="true">●</span><span class="selo">pontual</span><span>1 estudo</span></div><details><summary>Ver os estudos</summary><ul><li>Silva (2026)</li></ul><p class="codigos">Códigos no TCC (Apêndice A): P76</p></details></article><article class="ficha" id="ficha-26"><span class="num">Ficha 26</span><h2>Ajuda no momento certo</h2><p class="campo"><span class="campo-rotulo">O que fazer:</span> tutoriais em vídeo, <em>checklists</em> visuais passo a passo, glossário de termos como Pix e TED, e suporte humano por áudio ou vídeo dentro do aplicativo.</p><div class="respaldo"><span class="campo-rotulo">Respaldo:</span><span class="pontos" aria-hidden="true">●</span><span class="selo">pontual</span><span>1 estudo</span></div><details><summary>Ver os estudos</summary><ul><li>Silva (2026)</li></ul><p class="codigos">Códigos no TCC (Apêndice A): P70, P72, P73, P75</p></details></article><article class="ficha" id="ficha-27"><span class="num">Ficha 27</span><h2>Projete e teste com pessoas idosas</h2><p class="campo"><span class="campo-rotulo">O que fazer:</span> envolva pessoas idosas no desenho e nos testes das soluções.</p><div class="respaldo"><span class="campo-rotulo">Respaldo:</span><span class="pontos" aria-hidden="true">●●</span><span class="selo">moderado</span><span>2 estudos</span></div><details><summary>Ver os estudos</summary><ul><li>Verhalen, Silva e Rodrigues (2025)</li><li>Diniz e Silva (2024)</li></ul><p class="codigos">Códigos no TCC (Apêndice A): P45, P65</p></details></article></div>
+
+</main>
+<footer class="rodape">
+  <div class="contem">
+    <p>Guia elaborado no Trabalho de Conclusão de Curso de Brenoly Porto (Engenharia de Software, Universidade de Pernambuco, Campus Garanhuns, 2026), com orientação do Prof. Ivaldir Honório de Farias Junior.</p>
+    <p>Este guia não substitui o atendimento do seu banco ou da polícia. Em caso de golpe, veja <a href="ajuda.html">Onde buscar ajuda</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
