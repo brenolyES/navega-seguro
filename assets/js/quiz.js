@@ -63,11 +63,12 @@
     caixa.appendChild(el('p', null, acertos === dados.length
       ? 'Parabéns! Continue atento: os golpes mudam o tempo todo.'
       : 'Leia as dicas do guia e tente de novo quando quiser. Errar aqui faz parte do aprendizado.'));
+    var acoes = el('div', { 'class': 'quiz-fim' });
     var de = el('button', { type: 'button', 'class': 'botao cheio' }, 'Fazer de novo');
     de.addEventListener('click', function () { atual = 0; acertos = 0; mostrarPergunta(); caixa.querySelector('h2').focus(); });
-    caixa.appendChild(de);
-    var dicas = el('a', { href: 'pessoa-idosa.html', 'class': 'botao', style: 'margin-left:0.8rem; display:inline-block; text-decoration:none' }, 'Ver as dicas');
-    caixa.appendChild(dicas);
+    acoes.appendChild(de);
+    acoes.appendChild(el('a', { href: 'pessoa-idosa.html', 'class': 'botao' }, 'Ver as dicas'));
+    caixa.appendChild(acoes);
     t.focus();
   }
 
