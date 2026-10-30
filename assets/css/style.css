@@ -272,3 +272,134 @@ details ul { margin-top: 0; }
   summary { display: none; }
   .rodape { border-top: 1px solid #000; }
 }
+
+/* ======================================================================
+   Tema lúdico: cabeçalho amarelo-sol, uma cor por público e
+   o trio "Pare, Confira, Siga" em cores de semáforo.
+   Texto sempre escuro sobre tons claros (contraste mínimo de 7:1).
+   ====================================================================== */
+:root {
+  --sol: #ffd84d; --sol-claro: #fff4c7; --sol-borda: #b07d00;
+  --menta: #d9f4e6; --menta-forte: #bfe9d2; --menta-borda: #1f8a5b;
+  --ceu: #dcecff; --ceu-forte: #bcd9ff; --ceu-borda: #2c6fbf;
+  --lilas: #ece6ff; --lilas-forte: #d9cdff; --lilas-borda: #5b2a86;
+  --pessego: #ffe3d6; --pessego-forte: #ffc9b0;
+  --coral: #ff9b73; --coral-borda: #a8371a;
+  --verm: #d64545; --verm-claro: #ffe0e0; --verm-texto: #7a1f1f;
+  --verde: #1f8a5b; --verde-claro: #dff5e6; --verde-texto: #0b5d2a;
+  --raio: 22px;
+  --tom: var(--sol-claro); --tom-forte: var(--sol); --tom-borda: var(--sol-borda);
+}
+.tema-b { --tom: var(--menta); --tom-forte: var(--menta-forte); --tom-borda: var(--menta-borda); }
+.tema-c { --tom: var(--ceu); --tom-forte: var(--ceu-forte); --tom-borda: var(--ceu-borda); }
+.tema-quiz, .tema-sobre { --tom: var(--lilas); --tom-forte: var(--lilas-forte); --tom-borda: var(--lilas-borda); }
+.tema-ajuda { --tom: var(--pessego); --tom-forte: var(--pessego-forte); --tom-borda: var(--coral-borda); }
+
+/* Cabeçalho */
+.topo { background: var(--sol); border-bottom: 0; }
+.topo .ferramentas button { background: #fff; }
+.topo .ferramentas button:hover { background: var(--sol-claro); }
+.topo .ferramentas button[aria-pressed="true"] { background: var(--primaria); }
+
+/* Abertura de cada página */
+main > .heroi { max-width: none; }
+.heroi {
+  display: grid; grid-template-columns: auto 1fr; align-items: center; gap: var(--e2) var(--e3);
+  background: var(--tom); border-radius: var(--raio); padding: var(--e4);
+}
+.heroi h1 { font-weight: 800; color: var(--primaria); }
+.heroi .lead { margin-top: var(--e2); color: var(--texto); max-width: 34rem; }
+.heroi-icone {
+  width: 4.2rem; height: 4.2rem; padding: 0.7rem; border-radius: 50%;
+  background: var(--tom-forte); fill: none; stroke: var(--primaria);
+  stroke-width: 4; stroke-linecap: round; stroke-linejoin: round;
+}
+.tema-inicio .heroi { grid-template-columns: 1.4fr 1fr; }
+.tema-inicio .heroi h1 { font-size: clamp(2.1rem, 1.4rem + 2.6vw, 3.1rem); }
+.heroi-ilustra { width: 100%; max-width: 14rem; justify-self: center; }
+.i-sol { fill: var(--sol); } .i-cel { fill: var(--primaria); } .i-tela { fill: #fff; }
+.i-balao { fill: var(--coral); } .i-escudo { fill: var(--verde); }
+.i-interroga, .i-visto { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.i-interroga { stroke: #1b1b1b; stroke-width: 4; } .i-visto { stroke: #fff; stroke-width: 7; }
+
+/* Pare, Confira, Siga */
+.passos {
+  grid-column: 1 / -1; list-style: none; padding: 0; margin-top: var(--e2);
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--e2); max-width: none;
+}
+.passos li { margin: 0; max-width: none; padding: var(--e2) var(--e3); border-radius: 16px; background: #fff; border-left: 10px solid; }
+.passos strong { display: block; font-size: 1.15rem; }
+.passos span { display: block; font-size: 0.85rem; color: var(--texto); }
+.passos .p1 { border-color: var(--verm); } .passos .p1 strong { color: var(--verm-texto); }
+.passos .p2 { border-color: var(--sol-borda); } .passos .p2 strong { color: #3d2a00; }
+.passos .p3 { border-color: var(--verde); } .passos .p3 strong { color: var(--verde-texto); }
+
+/* Caminhos da página inicial */
+.caminhos { max-width: none; }
+.caminho { position: relative; padding-left: 4.8rem; border-radius: var(--raio); }
+.caminho::before {
+  content: ""; position: absolute; left: 1.1rem; top: 1.15rem; width: 2.7rem; height: 2.7rem; border-radius: 50%;
+  background: var(--icone) center / 58% no-repeat, var(--fundo-icone);
+}
+.caminho:nth-child(1) { background: var(--sol-claro); border-color: var(--sol-borda); --fundo-icone: var(--sol);
+  --icone: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a3a7a' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='12' cy='8' r='4'/%3E%3Cpath d='M4 21c1-4.5 4.5-6.5 8-6.5s7 2 8 6.5'/%3E%3C/svg%3E"); }
+.caminho:nth-child(2) { background: var(--menta); border-color: var(--menta-borda); --fundo-icone: var(--menta-forte);
+  --icone: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a3a7a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 7l9-4 9 4-9 4z'/%3E%3Cpath d='M7 9v5c0 2 2.5 3.5 5 3.5s5-1.5 5-3.5V9'/%3E%3C/svg%3E"); }
+.caminho:hover { filter: brightness(0.97); }
+
+/* Botões */
+.botao, .ferramentas button { border-radius: 999px; }
+.botao.cheio { background: var(--coral); color: #1b1b1b; border-color: var(--coral-borda); }
+.botao.cheio:hover { background: #ff8a5c; }
+
+/* Avisos e fichas */
+.aviso { background: var(--lilas); border-left-color: var(--lilas-borda); }
+.ficha { background: #fff; border: 3px solid var(--tom-borda); overflow: hidden; padding-top: 0; }
+.ficha-topo { margin: 0 calc(-1 * var(--e3)); padding: var(--e2) var(--e3); background: var(--tom); }
+.ficha .num { background: var(--primaria); color: #fff; }
+.pontos { color: var(--coral-borda); }
+
+/* Quiz */
+.quiz { background: #fff; border-color: var(--lilas-borda); }
+.quiz-opcoes .b-mito { background: var(--verm-claro); color: var(--verm-texto); border-color: var(--verm); }
+.quiz-opcoes .b-verdade { background: var(--verde-claro); color: var(--verde-texto); border-color: var(--verde); }
+.quiz-opcoes button::before { font-size: 1.1em; margin-right: 0.35em; }
+.quiz-opcoes .b-mito::before { content: "✗"; }
+.quiz-opcoes .b-verdade::before { content: "✓"; }
+.veredito.certo { color: var(--verde-texto); } .veredito.errado { color: var(--verm-texto); }
+
+/* Ajuda */
+.ajuda h2 { border-bottom: 4px solid var(--coral); }
+
+/* Rodapé */
+.rodape { background: var(--primaria); color: #fff; border-top: 6px solid var(--sol); }
+.rodape a { color: #fff; }
+
+@media (max-width: 640px) {
+  .heroi, .tema-inicio .heroi { grid-template-columns: 1fr; padding: var(--e3); }
+  .heroi-icone { width: 3.4rem; height: 3.4rem; }
+  .heroi-ilustra { max-width: 8.5rem; grid-row: 1; justify-self: start; }
+  .passos { grid-template-columns: 1fr; }
+  .caminho { padding-left: 4.2rem; }
+}
+
+/* Alto contraste: cores de destaque viram preto/amarelo */
+:root[data-tema="contraste"] body {
+  --tom: #000; --tom-forte: #000; --tom-borda: #fff; --sol: #000; --sol-claro: #000; --menta: #000; --menta-forte: #000;
+  --lilas: #000; --lilas-borda: #ffe14d; --coral: #ffe14d; --coral-borda: #ffe14d; --verm-claro: #000; --verde-claro: #000;
+  --verm-texto: #ffb3b3; --verde-texto: #a6f0b8; --sol-borda: #fff; --menta-borda: #fff;
+}
+:root[data-tema="contraste"] .topo { border-bottom: 3px solid #ffe14d; }
+:root[data-tema="contraste"] .topo .ferramentas button { background: #000; }
+:root[data-tema="contraste"] .topo .ferramentas button[aria-pressed="true"] { background: #ffe14d; color: #000; }
+:root[data-tema="contraste"] .ficha, :root[data-tema="contraste"] .quiz, :root[data-tema="contraste"] .passos li { background: #000; }
+:root[data-tema="contraste"] .passos strong, :root[data-tema="contraste"] .passos span { color: #fff; }
+:root[data-tema="contraste"] .rodape { background: #000; }
+:root[data-tema="contraste"] .i-tela { fill: #000; } :root[data-tema="contraste"] .i-cel { fill: #ffe14d; }
+:root[data-tema="contraste"] .caminho::before { background: var(--icone) center / 58% no-repeat, #ffe14d; }
+
+@media print {
+  .topo, .heroi, .ficha-topo, .rodape { background: none !important; color: #000 !important; }
+  .heroi-ilustra, .heroi-icone, .passos { display: none; }
+  .rodape a { color: #000; }
+}
