@@ -544,3 +544,9 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: auto; }
 .rodape p + p { margin-top: 0; }
 @media (max-width: 640px) { .rodape .contem { grid-template-columns: 1fr; } }
 @media print { .rodape .contem { display: block; } }
+
+/* Blocos de conteúdo com a mesma largura do cabeçalho e do rodapé */
+.caminhos, .fichas, .quiz, .aviso, .atalhos, .chamada-fluxo, .fluxo-area { max-width: none; }
+.aviso p, .aviso li, .ficha p, .ficha li, .quiz p, .fluxo-cartao p, .fluxo-cartao li { max-width: none; }
+.fichas { grid-template-columns: repeat(auto-fill, minmax(min(22rem, 100%), 1fr)); gap: var(--e3); }
+.fichas .ficha-ilustra { width: 6.5rem; }
