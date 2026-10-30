@@ -537,3 +537,10 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: auto; }
   .ficha-ilustra { width: 7rem; }
 }
 :root[data-tema="contraste"] .ficha .num { background: #ffe14d; color: #000; }
+
+/* Rodapé com a mesma largura do cabeçalho: duas colunas */
+.rodape .contem { display: grid; grid-template-columns: 1fr 1fr; gap: var(--e2) var(--e4); align-items: start; }
+.rodape p { max-width: none; }
+.rodape p + p { margin-top: 0; }
+@media (max-width: 640px) { .rodape .contem { grid-template-columns: 1fr; } }
+@media print { .rodape .contem { display: block; } }
