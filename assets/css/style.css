@@ -403,3 +403,137 @@ main > .heroi { max-width: none; }
   .heroi-ilustra, .heroi-icone, .passos { display: none; }
   .rodape a { color: #000; }
 }
+
+/* ======================================================================
+   Ilustrações, ícones das fichas e fluxograma "Recebi algo suspeito"
+   ====================================================================== */
+.tema-fluxo { --tom: var(--pessego); --tom-forte: var(--pessego-forte); --tom-borda: var(--coral-borda); }
+
+/* Paleta das ilustrações */
+.c-fundo { fill: var(--tom); } .c-navy { fill: var(--primaria); } .c-branco { fill: #fff; } .c-cinza { fill: #c9d3e3; }
+.c-sol { fill: var(--sol); } .c-ceu { fill: var(--ceu-forte); } .c-menta { fill: var(--menta-forte); } .c-pessego { fill: #f6c8a8; }
+.c-coral { fill: var(--coral); } .c-verde { fill: var(--verde); } .c-verm { fill: var(--verm); }
+.c-verm-claro { fill: var(--verm-claro); } .c-verde-claro { fill: var(--verde-claro); }
+[class*=" s-"], [class^="s-"] { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.s-navy { stroke: var(--primaria); stroke-width: 4; } .s-navy-fino { stroke: var(--primaria); stroke-width: 3; }
+.s-navy-grosso { stroke: var(--primaria); stroke-width: 8; }
+.s-escuro { stroke: #1b1b1b; stroke-width: 5; } .s-escuro-fino { stroke: #1b1b1b; stroke-width: 3; }
+.s-branco { stroke: #fff; stroke-width: 5; } .s-branco-fino { stroke: #fff; stroke-width: 3.5; }
+.s-verde { stroke: var(--verde); stroke-width: 6; } .s-verde-fino { stroke: var(--verde); stroke-width: 4.5; }
+.s-verm { stroke: var(--verm); stroke-width: 6; } .s-cinza { stroke: #c9d3e3; stroke-width: 4; }
+.c-sol.s-escuro-fino, .c-branco.s-navy-fino, .c-ceu.s-navy, .c-branco.s-navy { fill-opacity: 1; }
+.c-sol.s-escuro-fino { fill: var(--sol); } .c-branco.s-navy-fino, .c-branco.s-navy { fill: #fff; } .c-ceu.s-navy { fill: var(--ceu-forte); }
+
+/* Topo das fichas com ilustração */
+.ficha-topo { flex-direction: row; align-items: center; justify-content: space-between; gap: var(--e2); }
+.ficha-titulo { display: flex; flex-direction: column; align-items: flex-start; gap: var(--e1); }
+.ficha-ilustra { width: 8.5rem; flex: none; }
+.ficha-ilustra .c-fundo { fill: #fff; fill-opacity: .7; }
+.ficha-icone {
+  width: 3.4rem; height: 3.4rem; flex: none; padding: .55rem; border-radius: 50%; background: #fff;
+  fill: none; stroke: var(--primaria); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* Chamada da página inicial */
+.chamada-fluxo {
+  display: flex; align-items: center; gap: var(--e3); max-width: none; text-decoration: none; color: var(--texto);
+  background: var(--pessego); border: 3px solid var(--coral-borda); border-radius: var(--raio); padding: var(--e3);
+}
+.chamada-fluxo strong { display: block; font-size: 1.25rem; color: var(--primaria); }
+.chamada-fluxo:hover { background: var(--pessego-forte); }
+.chamada-icone {
+  width: 3.6rem; height: 3.6rem; flex: none; padding: .6rem; border-radius: 50%; background: var(--sol);
+  fill: none; stroke: #1b1b1b; stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* Fluxograma */
+.fluxo-area { display: grid; grid-template-columns: 15rem 1fr; gap: var(--e4); align-items: start; max-width: none; }
+.fluxo-lado { position: sticky; top: var(--e2); }
+.fluxo-lado-titulo { font-size: 0.9rem; color: var(--suave); }
+.trilha { list-style: none; padding: 0; margin-top: var(--e2); }
+.trilha-passo { position: relative; padding: 0 0 var(--e3) 2rem; margin: 0; max-width: none; }
+.trilha-passo::before {
+  content: ""; position: absolute; left: 0.45rem; top: 0.25rem; width: 0.9rem; height: 0.9rem; border-radius: 50%;
+  background: var(--verde); box-shadow: 0 0 0 4px var(--verde-claro);
+}
+.trilha-passo:not(:last-child)::after {
+  content: ""; position: absolute; left: 0.83rem; top: 1.2rem; bottom: 0.1rem; width: 3px; background: var(--linha);
+}
+.trilha-passo.agora::before { background: var(--coral); box-shadow: 0 0 0 4px var(--pessego); }
+.trilha-passo.fim::before { background: var(--primaria); box-shadow: 0 0 0 4px var(--ceu); }
+.trilha-pergunta { display: block; font-size: 0.75rem; color: var(--suave); line-height: 1.35; }
+.trilha-resposta {
+  font: inherit; font-size: 0.8rem; font-weight: 700; color: var(--primaria); background: none; border: 0; padding: 0.2em 0;
+  text-align: left; text-decoration: underline; text-underline-offset: 0.15em; cursor: pointer; min-height: 44px;
+}
+.fluxo-cartao {
+  background: #fff; border: 3px solid var(--coral-borda); border-radius: var(--raio); padding: var(--e4) var(--e3);
+  animation: entra .25s ease-out;
+}
+.fluxo-cartao > * + * { margin-top: var(--e3); }
+.fluxo-cartao h2 { font-size: 1.35rem; }
+.fluxo-sinais li { font-weight: 600; }
+.fluxo-opcoes { display: grid; gap: var(--e2); }
+.fluxo-opcoes.com-icone { grid-template-columns: repeat(auto-fit, minmax(min(13rem, 100%), 1fr)); }
+.fluxo-opcao {
+  display: flex; align-items: center; gap: var(--e2); width: 100%; min-height: 64px; text-align: left;
+  font: inherit; font-size: 1rem; font-weight: 700; color: var(--primaria);
+  background: var(--sol-claro); border: 3px solid var(--sol-borda); border-radius: 16px; padding: var(--e2) var(--e3); cursor: pointer;
+}
+.fluxo-opcao:hover { background: var(--sol); }
+.opcao-icone { width: 2.6rem; height: 2.6rem; flex: none; fill: none; stroke: var(--primaria); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.fluxo-cartao.resultado { border-color: var(--verde); }
+.fluxo-res-topo { display: flex; align-items: center; gap: var(--e3); }
+.fluxo-ilustra { width: 9rem; flex: none; }
+.fluxo-res-topo h2 { color: var(--verde-texto); }
+.fluxo-passos { counter-reset: passo; list-style: none; padding: 0; }
+.fluxo-passos li { counter-increment: passo; position: relative; padding-left: 2.8rem; }
+.fluxo-passos li + li { margin-top: var(--e2); }
+.fluxo-passos li::before {
+  content: counter(passo); position: absolute; left: 0; top: 0; width: 2rem; height: 2rem; border-radius: 50%;
+  background: var(--verde); color: #fff; font-weight: 800; font-size: 0.85rem; display: grid; place-items: center;
+}
+.fluxo-base { font-size: 0.85rem; }
+.fluxo-acolhe { background: var(--lilas); border-radius: 12px; padding: var(--e2) var(--e3); }
+.fluxo-acoes { display: flex; flex-wrap: wrap; gap: var(--e2); }
+.fluxo-voltar { margin-top: var(--e3); }
+.fluxo-nota { font-size: 0.85rem; color: var(--suave); }
+@keyframes entra { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* Pequena animação de boas-vindas na ilustração da página inicial */
+.heroi-ilustra .i-escudo, .heroi-ilustra .i-visto { transform-origin: 125px 140px; animation: escudo 0.6s ease-out 0.3s both; }
+@keyframes escudo { from { transform: scale(0.4); opacity: 0; } to { transform: none; opacity: 1; } }
+.quiz-retorno .veredito { animation: entra .25s ease-out; }
+
+@media (max-width: 640px) {
+  .ficha-ilustra { width: 5.5rem; }
+  .ficha-icone { width: 2.8rem; height: 2.8rem; }
+  .chamada-fluxo { flex-direction: column; align-items: flex-start; gap: var(--e2); }
+  .fluxo-area { grid-template-columns: 1fr; gap: var(--e3); }
+  .fluxo-lado { position: static; order: 2; }
+  .fluxo-cartao { padding: var(--e3) var(--e2); }
+  .fluxo-res-topo { flex-direction: column; align-items: flex-start; }
+  .fluxo-ilustra { width: 7rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fluxo-cartao, .heroi-ilustra .i-escudo, .heroi-ilustra .i-visto, .quiz-retorno .veredito { animation: none; }
+}
+
+:root[data-tema="contraste"] .ficha-icone, :root[data-tema="contraste"] .opcao-icone { background: #000; stroke: #ffe14d; }
+:root[data-tema="contraste"] .chamada-icone { background: #ffe14d; }
+:root[data-tema="contraste"] .chamada-fluxo, :root[data-tema="contraste"] .fluxo-cartao,
+:root[data-tema="contraste"] .fluxo-opcao, :root[data-tema="contraste"] .fluxo-acolhe { background: #000; color: #fff; border-color: #ffe14d; }
+:root[data-tema="contraste"] .fluxo-opcao { color: #ffe14d; }
+:root[data-tema="contraste"] .fluxo-res-topo h2 { color: #a6f0b8; }
+:root[data-tema="contraste"] .ficha-ilustra, :root[data-tema="contraste"] .fluxo-ilustra, :root[data-tema="contraste"] .heroi-ilustra { filter: grayscale(1) contrast(1.4); }
+
+@media print {
+  .ficha-ilustra, .ficha-icone, .chamada-fluxo, .fluxo-lado { display: none; }
+}
+h1, h2, h3 { overflow-wrap: break-word; hyphens: auto; }
+@media (max-width: 640px) {
+  .ficha-topo { flex-direction: column-reverse; align-items: flex-start; }
+  .ficha-ilustra { width: 7rem; }
+}
+:root[data-tema="contraste"] .ficha .num { background: #ffe14d; color: #000; }
