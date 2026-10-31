@@ -580,3 +580,13 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: auto; }
   .atalhos .botao-dica { width: 100%; }
 }
 @media (max-width: 640px) { .atalhos .botao-dica { border-radius: 18px; } }
+
+/* Legenda do respaldo: rótulo e descrição na mesma linha, pontos à esquerda */
+.legenda li { display: block; position: relative; padding-left: 3.4em; }
+.legenda .pontos { position: absolute; left: 0; top: 0; min-width: 0; }
+@media (max-width: 640px) {
+  .aviso { padding: var(--e2) var(--e2) var(--e2) var(--e3); }
+  .legenda li { font-size: 0.9rem; padding-left: 3em; }
+}
+.legenda .pontos { font-size: 1em; letter-spacing: 0.05em; }
+@media (max-width: 640px) { .legenda li { padding-left: 3.2em; } }
