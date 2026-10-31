@@ -550,3 +550,33 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: auto; }
 .aviso p, .aviso li, .ficha p, .ficha li, .quiz p, .fluxo-cartao p, .fluxo-cartao li { max-width: none; }
 .fichas { grid-template-columns: repeat(auto-fill, minmax(min(22rem, 100%), 1fr)); gap: var(--e3); }
 .fichas .ficha-ilustra { width: 6.5rem; }
+
+/* "Clique ou toque aqui": deixa claro onde clicar */
+.mao { width: 1.6em; height: 1.6em; flex: none; fill: none; stroke: currentColor; stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round; }
+.botao-dica {
+  gap: 0.6em; padding: 0.55em 1.3em 0.55em 1em; min-height: 64px; text-align: left;
+  box-shadow: 0 4px 0 var(--borda-sombra, rgba(10, 58, 122, 0.35));
+}
+.botao-dica:hover { transform: translateY(1px); box-shadow: 0 3px 0 var(--borda-sombra, rgba(10, 58, 122, 0.35)); }
+.botao-dica:active { transform: translateY(4px); box-shadow: none; }
+.botao-textos { display: flex; flex-direction: column; line-height: 1.2; }
+.botao-texto { font-size: 1rem; }
+.clique { font-size: 0.72rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.15em; }
+.atalhos { gap: var(--e3); }
+.clique-faixa {
+  display: inline-flex; align-items: center; gap: 0.5em; align-self: flex-start; margin-top: var(--e2);
+  font-size: 0.8rem; font-weight: 700; color: #fff; background: var(--primaria);
+  border-radius: 999px; padding: 0.35em 1em 0.35em 0.7em;
+}
+.chamada-fluxo > span { display: flex; flex-direction: column; }
+:root[data-tema="contraste"] .clique-faixa { background: #ffe14d; color: #000; }
+:root[data-tema="contraste"] .botao-dica { box-shadow: none; }
+@media (prefers-reduced-motion: reduce) { .botao-dica:hover, .botao-dica:active { transform: none; } }
+@media print { .clique, .clique-faixa, .mao { display: none; } }
+@media (max-width: 640px) {
+  .caminho { padding: 4.4rem var(--e3) var(--e3); }
+  .caminho::before { top: 1rem; left: var(--e3); }
+  .clique-faixa { align-self: stretch; border-radius: 14px; padding: 0.5em 0.8em; line-height: 1.3; }
+  .atalhos .botao-dica { width: 100%; }
+}
+@media (max-width: 640px) { .atalhos .botao-dica { border-radius: 18px; } }
