@@ -590,3 +590,47 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: auto; }
 }
 .legenda .pontos { font-size: 1em; letter-spacing: 0.05em; }
 @media (max-width: 640px) { .legenda li { padding-left: 3.2em; } }
+/* Menu em botões de tamanho fixo */
+.topo-linha { padding-bottom: var(--e2); }
+.menu ul { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--e1); padding: 0 0 var(--e3); }
+.menu li { margin: 0; }
+.menu a.menu-botao {
+  display: flex; align-items: center; gap: 0.5em; height: 100%; min-height: 3.2rem;
+  padding: 0.4em 0.8em; border: 2px solid var(--primaria); border-radius: 14px;
+  background: #fff; color: var(--primaria); font-size: 0.78rem; font-weight: 700; line-height: 1.2;
+  text-decoration: none; box-shadow: 0 3px 0 rgba(10, 58, 122, 0.35);
+}
+.menu a.menu-botao:hover { background: var(--sol-claro); border-bottom-color: var(--primaria); }
+.menu a.menu-botao:active { transform: translateY(3px); box-shadow: none; }
+.menu a.menu-botao[aria-current="page"] { background: var(--primaria); color: #fff; border-color: var(--primaria); }
+.menu-icone { width: 1.5em; height: 1.5em; flex: none; fill: none; stroke: currentColor; stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round; }
+.ferramentas button { min-width: 0; }
+@media (min-width: 641px) {
+  .ferramentas { display: grid; grid-template-columns: repeat(4, auto); }
+}
+@media (max-width: 640px) {
+  .menu ul { grid-template-columns: 1fr 1fr; gap: var(--e1); }
+  .menu a.menu-botao { font-size: 0.72rem; min-height: 3.4rem; padding: 0.35em 0.6em; }
+}
+:root[data-tema="contraste"] .menu a.menu-botao { background: #000; color: #ffe14d; border-color: #ffe14d; box-shadow: none; }
+:root[data-tema="contraste"] .menu a.menu-botao[aria-current="page"] { background: #ffe14d; color: #000; }
+@media print { .menu { display: none; } }
+/* Botão "Menu" (só no celular) */
+.menu-alternar { display: none; }
+@media (max-width: 640px) {
+  .menu-alternar {
+    display: flex; align-items: center; gap: 0.6em; width: 100%; min-height: 3.4rem; margin-bottom: var(--e2);
+    font: inherit; font-size: 0.85rem; font-weight: 800; color: #fff; background: var(--primaria);
+    border: 0; border-radius: 14px; padding: 0.4em 0.9em; cursor: pointer; text-align: left;
+  }
+  .menu-alternar .menu-dica { font-size: 0.68rem; font-weight: 600; margin-left: auto; text-decoration: underline; text-underline-offset: .15em; }
+  .js .menu { display: none; }
+  .js .menu.aberto { display: block; }
+  .menu-alternar[aria-expanded="true"] { background: var(--coral); color: #1b1b1b; }
+}
+:root[data-tema="contraste"] .menu-alternar { background: #ffe14d; color: #000; }
+@media (max-width: 640px) { .menu-alternar > span { white-space: nowrap; } }
+@media (max-width: 360px) {
+  .menu-alternar .menu-dica { white-space: normal; text-align: right; }
+  .ferramentas button { font-size: 0.62rem; white-space: nowrap; overflow-wrap: normal; padding: 0.3em 0.4em; }
+}

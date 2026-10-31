@@ -1,6 +1,7 @@
 // Navega Seguro — tamanho da letra, alto contraste e impressão.
 (function () {
   var raiz = document.documentElement;
+  raiz.classList.add('js');
   var ESCALAS = [87.5, 100, 115, 130, 150];
 
   var guarda = {
@@ -45,6 +46,14 @@
       anunciar(contraste ? 'Alto contraste ligado' : 'Alto contraste desligado');
     });
     if (imprimir) imprimir.addEventListener('click', function () { window.print(); });
+
+    var abrir = document.getElementById('abrir-menu');
+    var menu = document.getElementById('menu-principal');
+    if (abrir && menu) abrir.addEventListener('click', function () {
+      var aberto = menu.classList.toggle('aberto');
+      abrir.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+      abrir.querySelector('.menu-dica').textContent = aberto ? 'Toque aqui para fechar' : 'Toque aqui para abrir';
+    });
   });
 
   // Na impressão, mostra o conteúdo de todos os "Ver os estudos".
